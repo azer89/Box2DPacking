@@ -42,20 +42,31 @@ public:
 
 			b2EdgeShape shape;
 
+			b2Vec2 w1(-15.0f, 0.0f);   // bottomleft
+			b2Vec2 w2(10.0f, 0.0f);    // bottomright
+			b2Vec2 w3(-10.0f, 20.0f);  // topleft
+			b2Vec2 w4(10.0f, 20.0f);   // topright
+
+			b2Vec2 w5(0.0f, 15.0f);   // topright
+
 			// Floor
-			shape.Set(b2Vec2(-15.0f, 0.0f), b2Vec2(10.0f, 0.0f));
+			shape.Set(w1, w2);
 			ground->CreateFixture(&shape, 0.0f);
 
 			// Left wall
-			shape.Set(b2Vec2(-15.0f, 0.0f), b2Vec2(-10.0f, 20.0f));
+			shape.Set(w1, w3);
 			ground->CreateFixture(&shape, 0.0f);
 
 			// Right wall
-			shape.Set(b2Vec2(10.0f, 0.0f), b2Vec2(10.0f, 20.0f));
+			shape.Set(w2, w4);
 			ground->CreateFixture(&shape, 0.0f);
 
 			// Roof
-			shape.Set(b2Vec2(-10.0f, 20.0f), b2Vec2(10.0f, 20.0f));
+			//shape.Set(w3, w4);
+			//ground->CreateFixture(&shape, 0.0f);
+			shape.Set(w3, w5);
+			ground->CreateFixture(&shape, 0.0f);
+			shape.Set(w5, w4);
 			ground->CreateFixture(&shape, 0.0f);
 		}
 
@@ -115,8 +126,8 @@ public:
 	{
 		std::cout << "arrowhead\n";
 
-		b2Transform xf1;
-		xf1.q.Set(0.3524f * b2_pi);
+		/*b2Transform xf1;
+		xf1.q.Set(0.3524f * b2_pi); // rotation
 		xf1.p = xf1.q.GetXAxis();
 
 		b2Vec2 vertices[3];
@@ -133,13 +144,41 @@ public:
 		fd1.shape = &triangle1;
 
 		b2Transform xf2;
-		xf2.q.Set(-0.3524f * b2_pi);
+		xf2.q.Set(-0.3524f * b2_pi); // rotation
 		xf2.p = -xf2.q.GetXAxis();
 
 		b2PolygonShape triangle2;
 		vertices[0] = b2Mul(xf2, b2Vec2(-2.0f, 0.0f));
 		vertices[1] = b2Mul(xf2, b2Vec2(1.0f, 0.0f));
 		vertices[2] = b2Mul(xf2, b2Vec2(0.0f, 0.5f));
+		triangle2.Set(vertices, 3);*/
+
+		b2Transform xf1;
+		xf1.q.Set(0 * b2_pi); // rotation
+		xf1.p = xf1.q.GetXAxis();
+
+		b2Vec2 vertices[3];
+
+		b2PolygonShape triangle1;
+		vertices[0] = b2Mul(xf1, b2Vec2(-1.0f, 0.0f));
+		vertices[1] = b2Mul(xf1, b2Vec2(1.0f, 0.0f));
+		vertices[2] = b2Mul(xf1, b2Vec2(0.0f, 1.5f));
+		triangle1.Set(vertices, 3);
+
+		b2FixtureDef fd1;
+		fd1.density = 1.0f;
+		fd1.friction = 0.0f;
+		fd1.shape = &triangle1;
+
+		b2Transform xf2;
+		xf2.q.Set(b2_pi); // rotation
+		//xf2.p = -xf2.q.GetXAxis();
+		xf2.p = xf2.q.GetXAxis();
+
+		b2PolygonShape triangle2;
+		vertices[0] = b2Mul(xf2, b2Vec2(-3.0f, 0.0f));
+		vertices[1] = b2Mul(xf2, b2Vec2(-1.0f, 0.0f));
+		vertices[2] = b2Mul(xf2, b2Vec2(-2.0f, 2.5f));
 		triangle2.Set(vertices, 3);
 
 		b2FixtureDef fd2;
@@ -248,7 +287,7 @@ public:
 			}
 		}
 
-		g_debugDraw.DrawString(5, m_textLine, "Press 'c' to create a circle.");
+		//g_debugDraw.DrawString(5, m_textLine, "Press 'c' to create a circle.");
 		m_textLine += DRAW_STRING_NEW_LINE;
 	}
 
