@@ -169,7 +169,10 @@ public:
 		vertices[1] = b2Mul(xf1, b2Vec2(1.0f, 0.0f));
 		vertices[2] = b2Mul(xf1, b2Vec2(0.0f, 1.5f));
 		triangle1.Set(vertices, 3);
+<<<<<<< HEAD:Box2DPacking/Confined.h
 		triangle1.m_radius = 0.2; // radius skin
+=======
+>>>>>>> d3080c4912b0789ed5a95a3aa5b28ea708d5f074:confined.h
 
 		b2FixtureDef fd1;
 		fd1.density = 1.0f;
