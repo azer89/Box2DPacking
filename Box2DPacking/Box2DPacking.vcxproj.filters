@@ -69,10 +69,13 @@
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h">
       <Filter>DecorativePackingLib</Filter>
     </ClInclude>
-    <ClInclude Include="SystemParams.h">
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2DSystemParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h">
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.h">
       <Filter>DecorativePackingLib</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,15 +107,24 @@
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp">
       <Filter>DecorativePackingLib</Filter>
     </ClCompile>
-    <ClCompile Include="SystemParams.cpp">
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Confined.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp">
+    <ClCompile Include="Box2DSystemParams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.cpp">
       <Filter>DecorativePackingLib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="params.lua">
+    <None Include="box2d_params.lua">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\params.lua">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

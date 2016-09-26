@@ -1,10 +1,10 @@
 
 -- ---------- BOX2D packing ----------
 
-_upscaleFactor = 500.0;
-_downscaleFactor = 1.0 / _upscaleFactor;
+-- _upscaleFactor = 500.0;
+-- _downscaleFactor = 1.0 / _upscaleFactor;
 
-_box2DUpScaling = 100.0;
+_box2DUpScaling = 10.0;
 _box2DDownScaling = 1.0 / _box2DUpScaling;
 
 _function_length         = 100;
@@ -22,8 +22,8 @@ _function_length         = 100;
 --- Go to PairFunctions.h for implementation
 --_shouldUDFlip = true; 
 
-_image_folder = "C:\\Users\\azer\\workspace\\Images\\";
+--- _image_folder = "C:\\Users\\azer\\workspace\\Images\\";
 -- // rhino // elephant // dolphin // hare // bird // lion_head (set the name of the input here !!!)
-_artName = "bird"; 
-_ornament_dir = _image_folder .. "ornaments";
+-- _artName = "bird"; 
+-- _ornament_dir = _image_folder .. "ornaments";
 --_small_ornament_dir = _image_folder .. "ornaments";

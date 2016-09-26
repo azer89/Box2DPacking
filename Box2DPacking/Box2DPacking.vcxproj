@@ -95,12 +95,13 @@
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h" />
     <ClInclude Include="Confined.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SystemParams.h" />
+    <ClInclude Include="Box2DSystemParams.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Test.h" />
   </ItemGroup>
@@ -108,17 +109,20 @@
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp" />
+    <ClCompile Include="Confined.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="SystemParams.cpp" />
+    <ClCompile Include="Box2DSystemParams.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestEntries.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="params.lua" />
+    <None Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\params.lua" />
+    <None Include="box2d_params.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

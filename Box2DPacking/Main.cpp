@@ -32,9 +32,11 @@
 #include "Test.h"
 
 #include "SystemParams.h"
+#include "Box2DSystemParams.h"
 
 #include <glfw/glfw3.h>
 #include <stdio.h>
+#include <iostream>
 
 #ifdef _MSC_VER
 #define snprintf _snprintf
@@ -169,7 +171,7 @@ static void sKeyCallback(GLFWwindow* window, int key, int scancode, int action, 
 		case GLFW_KEY_HOME:
 			// Reset view
 			g_camera.m_zoom = 1.0f;
-			g_camera.m_center.Set(0.0f, 20.0f);
+			g_camera.m_center.Set(25.0f, 25.0f);
 			break;
 
 		case GLFW_KEY_Z:
@@ -280,6 +282,8 @@ static void sMouseButton(GLFWwindow* window, int32 button, int32 action, int32 m
 		{	
 			lastp = g_camera.ConvertScreenToWorld(ps);
 			rightMouseDown = true;
+
+			std::cout << g_camera.m_center.x << " " << g_camera.m_center.y << "\n";
 		}
 
 		if (action == GLFW_RELEASE)
@@ -302,6 +306,7 @@ static void sMouseMotion(GLFWwindow*, double xd, double yd)
 		b2Vec2 diff = pw - lastp;
 		g_camera.m_center.x -= diff.x;
 		g_camera.m_center.y -= diff.y;
+		//g_camera.m_center.y += diff.y;  // edited by Reza
 		lastp = g_camera.ConvertScreenToWorld(ps);
 	}
 }
@@ -349,7 +354,7 @@ static void sSimulate()
 		entry = g_testEntries + testIndex;
 		test = entry->createFcn();
 		g_camera.m_zoom = 1.0f;
-		g_camera.m_center.Set(0.0f, 20.0f);
+		g_camera.m_center.Set(25.0f, 25.0f);
 	}
 }
 
@@ -439,9 +444,12 @@ int main(int, char**)
 
 	// Load SystemParams
 	SystemParams::LoadParameters();
+	Box2DSystemParams::LoadParameters();
 
 	g_camera.m_width = 1024;
 	g_camera.m_height = 640;
+
+	g_camera.m_center.Set(25.0f, 25.0f);
 
 	if (glfwInit() == 0)
 	{

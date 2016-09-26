@@ -142,7 +142,7 @@ public:
 
 void Test::MouseDown(const b2Vec2& p)
 {
-	std::cout << p.x << " " << p.y << "\n";
+	//std::cout << p.x << " " << p.y << "\n";
 
 	m_mouseWorld = p;
 	
