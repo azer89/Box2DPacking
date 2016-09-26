@@ -52,13 +52,13 @@
       <WarningLevel>Level1</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\azer\workspace\Box2D\Box2D\imgui;C:\Users\azer\workspace\Box2D\Box2D\glew;C:\Users\azer\workspace\Box2D\Box2D\glfw;C:\Users\azer\workspace\Box2D\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\azer\workspace\Box2D\Box2D\imgui;C:\Users\azer\workspace\Box2D\Box2D\glew;C:\Users\azer\workspace\Box2D\Box2D\glfw;C:\Users\azer\workspace\Box2D\Box2D;C:\Users\azer\workspace\ShapeRadiusMatching\ShapeRadiusMatching;C:\Users\azer\workspace\opencv\build\include;C:\Users\azer\workspace\VecFieldDesign\vfd\inc;C:\Users\azer\workspace\VecFieldDesign\vfd\src;C:\Users\azer\workspace\Core\inc;C:\Users\azer\workspace\Lua533\Lua533;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\bin\x32\$(ConfigurationName);C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;winmm.lib;Box2D.lib;glew.lib;glfw.lib;imgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\bin\x32\$(ConfigurationName);C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\$(ConfigurationName);C:\Users\azer\workspace\opencv\build\x86\vc12\lib;C:\Users\azer\workspace\Core\lib\win32;C:\Users\azer\workspace\VecFieldDesign\vfd\lib;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\compiler\lib\ia32;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\mkl\lib\ia32;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016.3.207\windows\tbb\lib\ia32\vc12;C:\Users\azer\workspace\SuperLU_3.1\lib;C:\Users\azer\workspace\Lua533\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;winmm.lib;Box2D.lib;glew.lib;glfw.lib;imgui.lib;cored.lib;mkl_intel_c.lib;mkl_intel_thread.lib;mkl_core.lib;libiomp5md.lib;vfd_win32d.lib;superlu_3.1d.lib;opencv_core2412d.lib;opencv_highgui2412d.lib;opencv_imgproc2412d.lib;Lua533.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,33 +70,55 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\azer\workspace\Box2D\Box2D\imgui;C:\Users\azer\workspace\Box2D\Box2D\glew;C:\Users\azer\workspace\Box2D\Box2D\glfw;C:\Users\azer\workspace\Box2D\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\azer\workspace\Box2D\Box2D\imgui;C:\Users\azer\workspace\Box2D\Box2D\glew;C:\Users\azer\workspace\Box2D\Box2D\glfw;C:\Users\azer\workspace\Box2D\Box2D;C:\Users\azer\workspace\ShapeRadiusMatching\ShapeRadiusMatching;C:\Users\azer\workspace\opencv\build\include;C:\Users\azer\workspace\VecFieldDesign\vfd\inc;C:\Users\azer\workspace\VecFieldDesign\vfd\src;C:\Users\azer\workspace\Core\inc;C:\Users\azer\workspace\Lua533\Lua533;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\bin\x32\$(ConfigurationName);C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;winmm.lib;Box2D.lib;glew.lib;glfw.lib;imgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\bin\x32\$(ConfigurationName);C:\Users\azer\workspace\Box2D\Box2D\Build\vs2013\$(ConfigurationName);C:\Users\azer\workspace\opencv\build\x86\vc12\lib;C:\Users\azer\workspace\Core\lib\win32;C:\Users\azer\workspace\VecFieldDesign\vfd\lib;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\compiler\lib\ia32;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\mkl\lib\ia32;C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016.3.207\windows\tbb\lib\ia32\vc12;C:\Users\azer\workspace\SuperLU_3.1\lib;C:\Users\azer\workspace\Lua533\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;winmm.lib;Box2D.lib;glew.lib;glfw.lib;imgui.lib;core.lib;mkl_intel_c.lib;mkl_intel_thread.lib;mkl_core.lib;vfd_win32.lib;superlu_3.1.lib;opencv_core2412.lib;opencv_highgui2412.lib;opencv_imgproc2412.lib;libiomp5md.lib;Lua533.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ABlob.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ALine.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\APath.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ARectangle.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ArtData.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AVector.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h" />
     <ClInclude Include="Confined.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemParams.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Test.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SystemParams.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestEntries.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="params.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

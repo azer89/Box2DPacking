@@ -16,6 +16,8 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
+// ---------- BOX2D packing ----------
+
 /* edited by Reza (azer.darkblade@gmail.com) */
 
 #if defined(__APPLE__)
@@ -28,6 +30,8 @@
 #include <imgui/imgui_impl_glfw_gl3.h>
 #include "DebugDraw.h"
 #include "Test.h"
+
+#include "SystemParams.h"
 
 #include <glfw/glfw3.h>
 #include <stdio.h>
@@ -432,6 +436,9 @@ int main(int, char**)
 	// Enable memory-leak reports
 	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG));
 #endif
+
+	// Load SystemParams
+	SystemParams::LoadParameters();
 
 	g_camera.m_width = 1024;
 	g_camera.m_height = 640;

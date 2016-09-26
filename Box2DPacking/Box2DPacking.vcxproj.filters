@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DecorativePackingLib">
+      <UniqueIdentifier>{d26a271b-77ae-444e-829a-c7c4697d3ed6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -33,6 +36,45 @@
     <ClInclude Include="Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ABlob.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ALine.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\APath.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ARectangle.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ArtData.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AVector.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h">
+      <Filter>DecorativePackingLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -50,5 +92,28 @@
     <ClCompile Include="TestEntries.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemParams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp">
+      <Filter>DecorativePackingLib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="params.lua">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

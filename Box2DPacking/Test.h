@@ -16,6 +16,8 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
+// ---------- BOX2D packing ----------
+
 /* edited by Reza (azer.darkblade@gmail.com) */
 
 #ifndef TEST_H
