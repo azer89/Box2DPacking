@@ -78,10 +78,13 @@ void Confined::MakePhysicsObjectsFromArtData()
 	//std::cout << "_artDataArray.size " << _artDataArray.size() << "\n";
 
 
-	/*for (int a = 0; a < _artDataArray.size(); a++)
+	for (int a = 0; a < _artDataArray.size(); a++)
 	{
 		std::vector<std::vector<AVector>>       triPoints = _artDataArray[a]._triPoints;
 		std::vector<std::vector<AnIdxTriangle>> triangles = _artDataArray[a]._triangles;
+
+		// bug 
+		if (triPoints.size() == 0 || triangles.size() == 0) { continue; }
 
 		std::cout << a << " num triangles: " << triangles.size() << "; ";
 		std::cout      << " num points: " << triPoints.size() << "\n";
@@ -90,26 +93,26 @@ void Confined::MakePhysicsObjectsFromArtData()
 		topLeftBB.x = _artDataArray[a]._triLeft;
 		topLeftBB.y = _artDataArray[a]._triTop;
 
-		b2Vec2 p(topLeftBB.x, topLeftBB.y);
+		b2Vec2 p(topLeftBB.x * Box2DSystemParams::_box2DDownScaling, topLeftBB.y * Box2DSystemParams::_box2DDownScaling);
 		b2BodyDef bd;
-		bd.type = b2_dynamicBody;
+		bd.type = b2_staticBody;
 		bd.position = p;
 		b2Body* body = m_world->CreateBody(&bd);
-
+		
 		for (int b = 0; b < triangles.size(); b++)
 		{
-			for (int c = 0; c < triangles.size(); c++)
+			for (int c = 0; c < triangles[b].size(); c++)
 			{
 				//std::cout << ".";
 				AnIdxTriangle tri = triangles[b][c];
-				AVector pt0 = triPoints[b][tri.idx0] - topLeftBB;
-				AVector pt1 = triPoints[b][tri.idx1] - topLeftBB;
-				AVector pt2 = triPoints[b][tri.idx2] - topLeftBB;
+				AVector pt0 = (triPoints[b][tri.idx0] - topLeftBB) * Box2DSystemParams::_box2DDownScaling;
+				AVector pt1 = (triPoints[b][tri.idx1] - topLeftBB) * Box2DSystemParams::_box2DDownScaling;
+				AVector pt2 = (triPoints[b][tri.idx2] - topLeftBB) * Box2DSystemParams::_box2DDownScaling;
 
 				b2PolygonShape triangle;
 				b2Vec2 vertices[3] = { b2Vec2(pt0.x, pt0.y), b2Vec2(pt1.x, pt1.y), b2Vec2(pt2.x, pt2.y) };
 				triangle.Set(vertices, 3);
-				triangle.m_radius = 0.5; // radius skin
+				//triangle.m_radius = 0.5; // radius skin
 
 				b2FixtureDef fd;
 				fd.density = 1.0f;
@@ -118,8 +121,10 @@ void Confined::MakePhysicsObjectsFromArtData()
 
 				body->CreateFixture(&fd);
 			}
-		}
-	}*/
+		}// for 
+	}
+
+	std::cout << "DONE !!!\n";
 }
 
 void Confined::CreateCircle()
@@ -231,7 +236,7 @@ void Confined::CreateBox()
 {
 	std::cout << "box\n";
 
-	float32 a = 1.0f;
+	//float32 a = 1.0f;
 	b2Vec2 position;
 	position.x = 0.0f;
 	position.y = 0.0f;
