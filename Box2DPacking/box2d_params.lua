@@ -4,7 +4,7 @@
 -- _upscaleFactor = 500.0;
 -- _downscaleFactor = 1.0 / _upscaleFactor;
 
-_box2DUpScaling = 10.0;
+_box2DUpScaling = 5.0;
 _box2DDownScaling = 1.0 / _box2DUpScaling;
 
 _function_length         = 100;

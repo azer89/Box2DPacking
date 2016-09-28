@@ -86,8 +86,8 @@ void Confined::MakePhysicsObjectsFromArtData()
 		// bug 
 		if (triPoints.size() == 0 || triangles.size() == 0) { continue; }
 
-		std::cout << a << " num triangles: " << triangles.size() << "; ";
-		std::cout      << " num points: " << triPoints.size() << "\n";
+		//std::cout << a << " num triangles: " << triangles.size() << "; ";
+		//std::cout      << " num points: " << triPoints.size() << "\n";
 
 		AVector topLeftBB;
 		topLeftBB.x = _artDataArray[a]._triLeft;
@@ -95,12 +95,14 @@ void Confined::MakePhysicsObjectsFromArtData()
 
 		b2Vec2 p(topLeftBB.x * Box2DSystemParams::_box2DDownScaling, topLeftBB.y * Box2DSystemParams::_box2DDownScaling);
 		b2BodyDef bd;
-		bd.type = b2_staticBody;
+		bd.type = b2_dynamicBody;
 		bd.position = p;
 		b2Body* body = m_world->CreateBody(&bd);
 		
 		for (int b = 0; b < triangles.size(); b++)
 		{
+			if (triangles[b].size() == 0) { continue; } // ?
+
 			for (int c = 0; c < triangles[b].size(); c++)
 			{
 				//std::cout << ".";
@@ -109,19 +111,23 @@ void Confined::MakePhysicsObjectsFromArtData()
 				AVector pt1 = (triPoints[b][tri.idx1] - topLeftBB) * Box2DSystemParams::_box2DDownScaling;
 				AVector pt2 = (triPoints[b][tri.idx2] - topLeftBB) * Box2DSystemParams::_box2DDownScaling;
 
+				float triArea = std::abs(pt0.x * (pt1.y - pt2.y) + pt1.x * (pt2.y - pt0.y) + pt2.x * (pt0.y - pt1.y)) / 2.0f;
+				//std::cout << triArea << "\n";
+				if (triArea < 1e-3 * Box2DSystemParams::_box2DDownScaling) { continue; }
+
 				b2PolygonShape triangle;
 				b2Vec2 vertices[3] = { b2Vec2(pt0.x, pt0.y), b2Vec2(pt1.x, pt1.y), b2Vec2(pt2.x, pt2.y) };
 				triangle.Set(vertices, 3);
-				//triangle.m_radius = 0.5; // radius skin
+				//triangle.m_radius = 0.01; // radius skin
 
 				b2FixtureDef fd;
-				fd.density = 1.0f;
-				fd.friction = 0.0f;
+				//fd.density = 1.0f;
+				//fd.friction = 0.0f;
 				fd.shape = &triangle;
 
 				body->CreateFixture(&fd);
 			}
-		}// for 
+		} // for 
 	}
 
 	std::cout << "DONE !!!\n";
