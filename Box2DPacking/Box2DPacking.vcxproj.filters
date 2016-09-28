@@ -16,6 +16,12 @@
     <Filter Include="DecorativePackingLib">
       <UniqueIdentifier>{d26a271b-77ae-444e-829a-c7c4697d3ed6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DecorativePackingLib\Header Files">
+      <UniqueIdentifier>{67862188-bd60-4917-bba1-0c6504279459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DecorativePackingLib\Source Files">
+      <UniqueIdentifier>{159110a3-2a36-4c18-9ee5-b1952f4aa9d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,47 +42,65 @@
     <ClInclude Include="Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ABlob.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ALine.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\APath.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ARectangle.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ArtData.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AVector.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h">
-      <Filter>DecorativePackingLib</Filter>
-    </ClInclude>
     <ClInclude Include="Box2DSystemParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ABlob.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ALine.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\APath.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ARectangle.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ArtData.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AVector.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.h">
-      <Filter>DecorativePackingLib</Filter>
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AnIdxTriangle.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CGALTriangulation.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CurveRDP.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SelfIntersectionFixer.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\clipper.hpp">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ClipperWrapper.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -95,29 +119,44 @@
     <ClCompile Include="TestEntries.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp">
-      <Filter>DecorativePackingLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp">
-      <Filter>DecorativePackingLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.cpp">
-      <Filter>DecorativePackingLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp">
-      <Filter>DecorativePackingLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp">
-      <Filter>DecorativePackingLib</Filter>
-    </ClCompile>
     <ClCompile Include="Confined.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Box2DSystemParams.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.cpp">
-      <Filter>DecorativePackingLib</Filter>
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CGALTriangulation.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CurveRDP.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SelfIntersectionFixer.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\clipper.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ClipperWrapper.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,16 +3,17 @@
 
 Confined::Confined()
 {
-	// load regions
+	// ---------- load regions ----------
 	this->_uVFRegions = _pathIO.LoadRegions(SystemParams::_image_folder + SystemParams::_artName + ".path");
 	for (int a = 0; a < _uVFRegions.size(); a++)
 	    { this->_dVFRegions.push_back(_uVFRegions[a].Scale(Box2DSystemParams::_box2DDownScaling)); }
 
-	// region scaling (0.1 from the normal size)
+	
+	// ---------- region scaling (0.1 from the normal size) ----------
 	for (int a = 0; a < _dVFRegions.size(); a++)
 	    { _dRegionBoundary.push_back(VFRegion::ConvertPathsToVectors(_dVFRegions[a]._boundaryPaths)[0]); }
 
-	// make fixtures of region boundaries
+	// ---------- make fixtures of region boundaries ----------
 	b2BodyDef bd;
 	b2Body* ground = m_world->CreateBody(&bd);
 	b2EdgeShape shape;
@@ -35,6 +36,88 @@ Confined::Confined()
 
 	// ---------- no gravity ----------
 	m_world->SetGravity(b2Vec2(0.0f, 0.0f));
+
+	// ---------- load art data and process them ----------
+	LoadArtData();
+	MakePhysicsObjectsFromArtData();
+}
+
+void Confined::LoadArtData()
+{
+	std::cout << "LoadOrnaments\n";
+
+	// ===== load deformed ornaments =====
+	std::stringstream aDss;
+	aDss << SystemParams::_image_folder << SystemParams::_artName << ".artdata";
+	_artDataArray = _pathIO.LoadArtData(aDss.str());
+
+	std::cout << "_artDataArray size: " << _artDataArray.size() << "\n";
+
+	for (int a = 0; a < _artDataArray.size(); a++)
+	{
+		_artDataArray[a].ScaleSimpleBoundaries(Box2DSystemParams::_box2DDownScaling);
+	}
+}
+
+void Confined::MakePhysicsObjectsFromArtData()
+{
+	for (int a = 0; a < _artDataArray.size(); a++)
+	{
+		_artDataArray[a].FixSelfIntersection();
+	}
+
+	for (int a = 0; a < _artDataArray.size(); a++)
+	{
+		//std::cout << a << "\n";
+		_artDataArray[a].Triangulate();
+	}
+
+	//std::cout << "_artDataArray.size " << _artDataArray.size() << "\n";
+
+
+	for (int a = 0; a < _artDataArray.size(); a++)
+	{
+		
+
+		std::vector<std::vector<AVector>>       triPoints = _artDataArray[a]._triPoints;
+		std::vector<std::vector<AnIdxTriangle>> triangles = _artDataArray[a]._triangles;
+
+		std::cout << a << " num triangles: " << triangles.size() << "\n";
+
+		AVector topLeftBB;
+		topLeftBB.x = _artDataArray[a]._triLeft;
+		topLeftBB.y = _artDataArray[a]._triTop;
+
+		b2Vec2 p(topLeftBB.x, topLeftBB.y);
+		b2BodyDef bd;
+		bd.type = b2_dynamicBody;
+		bd.position = p;
+		b2Body* body = m_world->CreateBody(&bd);
+
+		for (int b = 0; b < triangles.size(); b++)
+		{
+			for (int c = 0; c < triangles.size(); c++)
+			{
+				//std::cout << ".";
+				AnIdxTriangle tri = triangles[b][c];
+				AVector pt0 = triPoints[b][tri.idx0] - topLeftBB;
+				AVector pt1 = triPoints[b][tri.idx1] - topLeftBB;
+				AVector pt2 = triPoints[b][tri.idx2] - topLeftBB;
+
+				b2PolygonShape triangle;
+				b2Vec2 vertices[3] = { b2Vec2(pt0.x, pt0.y), b2Vec2(pt1.x, pt1.y), b2Vec2(pt2.x, pt2.y) };
+				triangle.Set(vertices, 3);
+				triangle.m_radius = 0.5; // radius skin
+
+				b2FixtureDef fd;
+				fd.density = 1.0f;
+				fd.friction = 0.0f;
+				fd.shape = &triangle;
+
+				body->CreateFixture(&fd);
+			}
+		}
+	}
 }
 
 void Confined::CreateCircle()

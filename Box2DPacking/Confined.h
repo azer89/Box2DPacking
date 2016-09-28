@@ -67,12 +67,18 @@ public:
 	}
 
 public:
+	void LoadArtData();
+	void MakePhysicsObjectsFromArtData();
+
+public:
 	PathIO _pathIO;
 
 	std::vector<VFRegion> _uVFRegions;
 	std::vector<VFRegion> _dVFRegions;
 
 	std::vector<std::vector<AVector>> _dRegionBoundary;
+
+	std::vector<ArtData> _artDataArray;
 };
 
 #endif
