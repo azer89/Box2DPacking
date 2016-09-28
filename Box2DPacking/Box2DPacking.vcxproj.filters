@@ -102,6 +102,12 @@
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ClipperWrapper.h">
       <Filter>DecorativePackingLib\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\simple_svg.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -156,6 +162,9 @@
       <Filter>DecorativePackingLib\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ClipperWrapper.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.cpp">
       <Filter>DecorativePackingLib\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

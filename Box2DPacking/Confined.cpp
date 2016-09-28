@@ -1,6 +1,8 @@
 
 #include "Confined.h"
 
+#include "MySVGRenderer.h"
+
 Confined::Confined()
 {
 	// ---------- load regions ----------
@@ -52,11 +54,6 @@ void Confined::LoadArtData()
 	_artDataArray = _pathIO.LoadArtData(aDss.str());
 
 	std::cout << "_artDataArray size: " << _artDataArray.size() << "\n";
-
-	for (int a = 0; a < _artDataArray.size(); a++)
-	{
-		_artDataArray[a].ScaleSimpleBoundaries(Box2DSystemParams::_box2DDownScaling);
-	}
 }
 
 void Confined::MakePhysicsObjectsFromArtData()
@@ -64,6 +61,8 @@ void Confined::MakePhysicsObjectsFromArtData()
 	for (int a = 0; a < _artDataArray.size(); a++)
 	{
 		_artDataArray[a].FixSelfIntersection();
+		//_artDataArray[a].ScaleSimpleBoundaries(5.0f);
+		//_artDataArray[a].ScaleSimpleBoundaries(Box2DSystemParams::_box2DDownScaling);
 	}
 
 	for (int a = 0; a < _artDataArray.size(); a++)
@@ -72,17 +71,20 @@ void Confined::MakePhysicsObjectsFromArtData()
 		_artDataArray[a].Triangulate();
 	}
 
+	MySVGRenderer::SaveOrnamentsToSVG(SystemParams::_image_folder + SystemParams::_artName + "_simple.svg", _artDataArray);
+
+	// SaveTrianglesToSVG
+	MySVGRenderer::SaveTrianglesToSVG(SystemParams::_image_folder + SystemParams::_artName + "_tri.svg", _artDataArray);
 	//std::cout << "_artDataArray.size " << _artDataArray.size() << "\n";
 
 
-	for (int a = 0; a < _artDataArray.size(); a++)
+	/*for (int a = 0; a < _artDataArray.size(); a++)
 	{
-		
-
 		std::vector<std::vector<AVector>>       triPoints = _artDataArray[a]._triPoints;
 		std::vector<std::vector<AnIdxTriangle>> triangles = _artDataArray[a]._triangles;
 
-		std::cout << a << " num triangles: " << triangles.size() << "\n";
+		std::cout << a << " num triangles: " << triangles.size() << "; ";
+		std::cout      << " num points: " << triPoints.size() << "\n";
 
 		AVector topLeftBB;
 		topLeftBB.x = _artDataArray[a]._triLeft;
@@ -117,7 +119,7 @@ void Confined::MakePhysicsObjectsFromArtData()
 				body->CreateFixture(&fd);
 			}
 		}
-	}
+	}*/
 }
 
 void Confined::CreateCircle()

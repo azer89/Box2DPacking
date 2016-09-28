@@ -99,8 +99,10 @@
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LRFunctions.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SelfIntersectionFixer.h" />
+    <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\simple_svg.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\UtilityFunctions.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\VFRegion.h" />
@@ -118,6 +120,7 @@
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CurveRDP.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\dirent.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\LuaScript.cpp" />
+    <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\PathIO.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SelfIntersectionFixer.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\SystemParams.cpp" />
