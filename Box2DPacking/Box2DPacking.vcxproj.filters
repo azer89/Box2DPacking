@@ -108,6 +108,15 @@
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.h">
       <Filter>DecorativePackingLib\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\nanoflann.hpp">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\NANOFLANNWrapper.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\PointCloud.h">
+      <Filter>DecorativePackingLib\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,6 +174,9 @@
       <Filter>DecorativePackingLib\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\MySVGRenderer.cpp">
+      <Filter>DecorativePackingLib\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DecorativeOrnaments\DecorativeOrnaments\NANOFLANNWrapper.cpp">
       <Filter>DecorativePackingLib\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

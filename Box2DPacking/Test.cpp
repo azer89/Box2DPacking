@@ -251,7 +251,8 @@ void Test::LaunchBomb(const b2Vec2& position, const b2Vec2& velocity)
 	bd.position = position;
 	bd.bullet = true;
 	m_bomb = m_world->CreateBody(&bd);
-	m_bomb->SetLinearVelocity(velocity);
+	//m_bomb->SetLinearVelocity(velocity);
+	m_bomb->ApplyForce(velocity, position, true);
 	
 	b2CircleShape circle;
 	circle.m_radius = 0.3f;

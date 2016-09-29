@@ -85,6 +85,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\nanoflann.hpp" />
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\NANOFLANNWrapper.h" />
+    <ClInclude Include="..\..\DecorativeOrnaments\DecorativeOrnaments\PointCloud.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ABlob.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ALine.h" />
     <ClInclude Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\AnIdxTriangle.h" />
@@ -114,6 +117,7 @@
     <ClInclude Include="Test.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\DecorativeOrnaments\DecorativeOrnaments\NANOFLANNWrapper.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\CGALTriangulation.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\clipper.cpp" />
     <ClCompile Include="..\..\ShapeRadiusMatching\ShapeRadiusMatching\ClipperWrapper.cpp" />

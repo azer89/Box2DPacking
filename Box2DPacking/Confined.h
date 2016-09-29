@@ -51,11 +51,9 @@ public:
 
 	Confined();
 
-	void CreateCircle();
-
-	void CreateArrowHead();
-
-	void CreateBox();
+	//void CreateCircle();
+	//void CreateArrowHead();
+	//void CreateBox();
 
 	void Keyboard(int key);
 
@@ -69,6 +67,7 @@ public:
 public:
 	void LoadArtData();
 	void MakePhysicsObjectsFromArtData();
+	void RepulsionForce();
 
 public:
 	PathIO _pathIO;
