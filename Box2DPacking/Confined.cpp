@@ -113,7 +113,7 @@ void Confined::MakePhysicsObjectsFromArtData()
 
 				float triArea = std::abs(pt0.x * (pt1.y - pt2.y) + pt1.x * (pt2.y - pt0.y) + pt2.x * (pt0.y - pt1.y)) / 2.0f;
 				//std::cout << triArea << "\n";
-				if (triArea < 1e-3 * Box2DSystemParams::_box2DDownScaling) { continue; }
+				if (triArea < 1e-1 * Box2DSystemParams::_box2DDownScaling) { continue; }
 
 				b2PolygonShape triangle;
 				b2Vec2 vertices[3] = { b2Vec2(pt0.x, pt0.y), b2Vec2(pt1.x, pt1.y), b2Vec2(pt2.x, pt2.y) };
@@ -121,7 +121,7 @@ void Confined::MakePhysicsObjectsFromArtData()
 				//triangle.m_radius = 0.01; // radius skin
 
 				b2FixtureDef fd;
-				//fd.density = 1.0f;
+				//fd.density = 10.1f;
 				//fd.friction = 0.0f;
 				fd.shape = &triangle;
 
